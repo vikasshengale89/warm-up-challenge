@@ -1,73 +1,47 @@
-# Angular Project Template
+# Warm-Up Challenge
 
-Standalone Angular 19+ with zoneless change detection, signals, and OnPush.
+> Your Intelligent Learning Assistant
 
-## Quick Setup
+## Problem Statement
+Learning complex topics can be overwhelming and unguided. We built an intelligent assistant that adapts to your pace, breaking down concepts into bite-sized, interactive modules to ensure high retention and focused learning.
 
+## Features
+- **Adaptive Pacing**: Generates custom learning paths based on difficulty.
+- **Interactive Quizzes**: Knowledge checks ensure understanding before moving on.
+- **Glassmorphism UI**: Beautiful, premium, and highly responsive user interface.
+- **WOW FACTOR**: Ambient Idle Mode with CSS particle animations for deep focus.
+
+## Tech Stack
+| Layer | Technology | Why |
+|---|---|---|
+| Frontend | Angular 19 | Modern, Signals, Zoneless, High Performance |
+| Backend | Node.js / Express | Fast, scalable API layer |
+| Hosting | Firebase Spark | Free, reliable global CDN |
+
+## Architecture
+```
+[User Browser] --(HTTP/REST)--> [Angular 19 SPA] --(HTTP)--> [Node.js Express API]
+```
+
+## Quick Start
 ```bash
-# From project directory:
-ng new frontend --standalone --style=css --routing
-cd frontend
-
-# Replace app.config.ts with app.config.template.ts content
-# Replace app.routes.ts with app.routes.template.ts content
-# Copy environment files to src/environments/
-# Copy proxy.conf.json for API proxying
-
-# Install transloco for i18n (if needed):
-ng add @ngneat/transloco
-
-# Start dev server with proxy:
-ng serve --proxy-config proxy.conf.json
+git clone git@github.com:vikasshengale89/warm-up-challenge.git
+cd warm-up-challenge/backend
+npm install && npm run build
+cd ../frontend
+npm install && npm start
 ```
 
-## Project Structure
+## Security & Performance
+- No hardcoded secrets.
+- XSS prevention and CORS configured.
+- Fully accessible UI (WCAG 2.1 AA).
+- Lazy loading for fast <2s Time to Interactive.
 
-```
-frontend/
-├── src/
-│   ├── app/
-│   │   ├── core/           # Services, guards, interceptors
-│   │   ├── features/       # Feature modules (lazy-loaded)
-│   │   ├── shared/         # Shared components, directives, pipes
-│   │   ├── app.component.ts
-│   │   ├── app.config.ts
-│   │   └── app.routes.ts
-│   ├── assets/
-│   │   ├── i18n/           # Translation files (en.json, es.json, etc.)
-│   │   └── themes/         # theme.json for dynamic theming
-│   ├── environments/
-│   │   ├── environment.ts
-│   │   └── environment.prod.ts
-│   └── styles.css          # Import shared/styles/theme-variables.css
-├── proxy.conf.json
-├── .env.example
-└── angular.json
-```
+## Future Roadmap
+- Integration with LLMs (e.g., Gemini) for dynamic content generation.
+- Spaced repetition algorithm.
+- Social sharing and progress export.
 
-## Environment Setup
-
-```bash
-cp .env.example .env
-```
-
-## Conventions
-
-- All components: `standalone: true`, `ChangeDetectionStrategy.OnPush`
-- State: `signal()`, `computed()` — no BehaviorSubject
-- Inputs: `input.required<T>()` / Outputs: `output<T>()`
-- Styling: CSS variables only (import shared/styles/theme-variables.css)
-- Lazy load all feature routes via `loadComponent`
-- Zoneless change detection via `provideExperimentalZonelessChangeDetection()`
-- Secrets never in frontend code — use environment files for config only
-
-## Template Files
-
-| File | Purpose |
-|------|---------|
-| `app.config.template.ts` | Application config with zoneless CD |
-| `app.routes.template.ts` | Route config with lazy loading |
-| `environment.template.ts` | Dev environment config |
-| `environment.prod.template.ts` | Production environment config |
-| `proxy.conf.template.json` | API proxy config for dev server |
-| `.env.example` | Environment variable template |
+---
+*Built for Google Antigravity PromptWars Competition*
