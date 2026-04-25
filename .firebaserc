@@ -1,3 +1,8 @@
 {
-  "projects": { "default": "warm-up-challenge" }
+  "projects": {
+    "default": "warm-up-challenge",
+    "staging": "warm-up-challenge-1787d"
+  },
+  "targets": {},
+  "etags": {}
 }
