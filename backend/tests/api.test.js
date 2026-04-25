@@ -14,7 +14,7 @@ async function runTests() {
     });
     const json2 = await res2.json();
     assert.strictEqual(json2.topic, 'React');
-    assert.strictEqual(json2.modules.length, 2);
+    assert.strictEqual(json2.modules.length, 3);
     console.log('Generate modules passed');
     console.log('All backend tests passed!');
   } catch (err) {
